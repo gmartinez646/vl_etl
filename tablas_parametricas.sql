@@ -3,7 +3,7 @@ create table resultados_origen(
     id_resultado_final int
 );
 insert into resultados_origen(desc_resultado_origen, id_resultado_final)
-values ('Muestra no apta para diagnóstico', 3);
+values ('Muestra no apta para diagn�stico', 3);
 insert into resultados_origen(desc_resultado_origen, id_resultado_final)
 values ('Negativo', 2);
 insert into resultados_origen(desc_resultado_origen, id_resultado_final)
@@ -16,6 +16,8 @@ insert into resultados_origen(desc_resultado_origen, id_resultado_final)
 values ('Reactivo', 1);
 insert into resultados_origen(desc_resultado_origen, id_resultado_final)
 values ('Detectable', 1);
+insert into resultados_origen(desc_resultado_origen, id_resultado_final)
+values ('*sin dato*', 4);
 
 create table resultados(
     id int,
@@ -30,6 +32,9 @@ insert into resultados (id, desc_resultado)
 
 insert into resultados (id, desc_resultado)
      values (3, 'Muestra no apta');
+
+insert into resultados (id, desc_resultado)
+     values (4, 'Sin Datos');
 
 create table centros_testeo (
     id int,
