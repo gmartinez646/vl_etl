@@ -1,0 +1,11 @@
+Rango_Edad = IF('consolidado'[Edad Diagnostico] > 60, "60 - infinito", 
+                IF('consolidado'[Edad Diagnostico] > 49, "50 - 59",
+                    IF('consolidado'[Edad Diagnostico] > 39, "40 - 49",
+                        IF('consolidado'[Edad Diagnostico] > 29, "30 - 39",
+                            IF('consolidado'[Edad Diagnostico] > 19, "20 - 29",
+                                IF('consolidado'[Edad Diagnostico] > 0, "0 - 19", "")
+                            )
+                        )
+                    )
+                )
+             )
