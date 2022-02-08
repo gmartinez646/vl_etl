@@ -1,0 +1,14 @@
+a<-resultados %>% 
+  filter(!is.na(`Fecha estudio`))%>%
+  arrange(Resultado,`Fecha estudio`)%>% 
+  group_by(Resultado,semana=week(`Fecha estudio`)) %>% 
+  summarise(suma = n()) %>% 
+  mutate(acumulado = cumsum(suma)/5695)
+
+
+ggplot(a, aes(x = semana, y = acumulado, fill=Resultado))+
+  geom_area(aes(x = semana, y = acumulado),alpha=0.7)+
+  geom_text(aes(label= round(acumulado,digits=3)),position="stack",vjust =1,size=4,check_overlap = T)+
+  scale_fill_manual(values=c("blue", "red", "white"),"Resul", label=c("posi","nega"),guide=guide_legend(reverse=T))
+
+  
